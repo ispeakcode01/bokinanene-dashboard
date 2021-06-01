@@ -11,13 +11,16 @@ module.exports = {
     rules: [
       {
         // Include ts, tsx, js, and jsx files.
-        test: /\.(ts|js)x?$/,
+        test: /\.(ts)x?$/,
         exclude: /node_modules/,
         loader: 'babel-loader',
       },
       {
         test: /\.vue$/,
         loader: 'vue-loader',
+        options: {
+          hotReload: true, // disables Hot Reload
+        },
       },
       {
         test: /\.css$/i,
@@ -35,6 +38,8 @@ module.exports = {
   ],
   devServer: {
     contentBase: path.join(__dirname, './server/public'),
+    historyApiFallback: true,
+    port: 5000,
   },
   mode: 'development',
   devtool: 'inline-source-map',

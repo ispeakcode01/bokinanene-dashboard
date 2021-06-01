@@ -3,6 +3,7 @@ module.exports = {
     browser: true,
     es2021: true,
     node: true,
+    jest: true,
   },
   extends: [
     'plugin:vue/essential',
@@ -18,5 +19,6 @@ module.exports = {
   ],
   rules: {
     semi: ['error', 'never'],
+    'max-len': ['error', { code: 200 }],
   },
 }

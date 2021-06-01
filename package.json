@@ -4,19 +4,22 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "run-p dev-build dev-server",
+    "dev": "webpack serve --config ./webpack.config.js --hot",
+    "dev-env": "run-p dev-build dev-server",
     "dev-build": "npm run webpack -- --watch",
     "dev-server": "nodemon server",
-    "lint": "eslint --ext .ts,.vue ./client",
+    "lint": "eslint --ext .ts,.vue .",
     "webpack": "webpack --config ./webpack.config.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest --watch --verbose"
   },
   "author": "Kateti Mareko",
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.14.3",
     "@babel/preset-env": "^7.14.4",
+    "@testing-library/vue": "^5.6.2",
     "@types/express": "^4.17.12",
+    "@types/jest": "^26.0.23",
     "@typescript-eslint/eslint-plugin": "^4.25.0",
     "@typescript-eslint/parser": "^4.25.0",
     "autoprefixer": "^10.2.6",
@@ -26,16 +29,20 @@
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-plugin-import": "^2.23.3",
     "eslint-plugin-vue": "^7.9.0",
+    "jest": "^27.0.3",
     "nodemon": "^2.0.7",
     "npm-run-all": "^4.1.5",
     "postcss-loader": "^5.3.0",
     "style-loader": "^2.0.0",
     "tailwindcss": "^2.1.2",
+    "ts-jest": "^27.0.2",
     "typescript": "^4.3.2",
+    "vue-jest": "^3.0.7",
     "vue-loader": "^15.9.7",
     "vue-template-compiler": "^2.6.12",
     "webpack": "^5.38.1",
-    "webpack-cli": "^4.7.0"
+    "webpack-cli": "^4.7.0",
+    "webpack-dev-server": "^3.11.2"
   },
   "dependencies": {
     "express": "^4.17.1",
