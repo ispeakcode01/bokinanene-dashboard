@@ -11,9 +11,12 @@ module.exports = {
     rules: [
       {
         // Include ts, tsx, js, and jsx files.
-        test: /\.(ts)x?$/,
+        test: /\.(ts|js)x?$/,
         exclude: /node_modules/,
         loader: 'babel-loader',
+        options: {
+          presets: ['@babel/preset-env', '@babel/preset-typescript'],
+        },
       },
       {
         test: /\.vue$/,
@@ -24,13 +27,12 @@ module.exports = {
       },
       {
         test: /\.css$/i,
-        include: path.resolve(__dirname, 'client'),
         use: ['style-loader', 'css-loader', 'postcss-loader'],
       },
     ],
   },
   resolve: {
-    extensions: ['.tsx', '.ts', '.js'],
+    extensions: ['.tsx', '.ts', '.js', '.vue'],
   },
   plugins: [
     // make sure to include the plugin!
