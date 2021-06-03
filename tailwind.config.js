@@ -3,14 +3,16 @@ module.exports = {
   darkMode: false, // or 'media' or 'class'
   theme: {
     colors: {
-      primary: '#241623',
+      primary: '#7DBBC3',
       button: '#ff5252',
-      secondary: '#D56F3E',
+      secondary: '#DE6B48',
       white: '#fff',
-      accent: '#3C787E',
-      color1: '#D0CD94',
-      color2: '#C7EF00',
+      footer: '#171717',
+      accent: '#F4B9B2',
+      color1: '#E5B181',
+      color2: '#DAEDBD',
     },
+
     extend: {},
   },
   variants: {
